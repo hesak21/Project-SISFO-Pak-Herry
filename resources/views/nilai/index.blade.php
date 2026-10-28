@@ -32,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($nilais as $index => $item)
+                        @forelse($nilai as $index => $item)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td class="font-weight-bold">{{ $item->siswa->nama ?? '-' }}</td>
