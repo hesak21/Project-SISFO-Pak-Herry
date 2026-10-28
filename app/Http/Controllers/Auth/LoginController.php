@@ -16,7 +16,7 @@ class LoginController extends Controller implements HasMiddleware
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Get the middleware that should be assigned to the controller.
@@ -27,5 +27,15 @@ class LoginController extends Controller implements HasMiddleware
             new Middleware('guest', except: ['logout']),
             new Middleware('auth', only: ['logout']),
         ];
+    }
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // Mengosongkan constructor agar tidak bentrok dengan AuthenticatesUsers
     }
 }
