@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('siswa_id')
-                ->constrained('siswas')
+                ->constrained('siswa')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
             $table->foreignId('mapel_id')
-                ->constrained('mapels')
+                ->constrained('mapel')
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
 
