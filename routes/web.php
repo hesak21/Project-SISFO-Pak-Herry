@@ -22,7 +22,9 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/home', [DashboardController::class, 'index'])->name('home');
 
 // Route Resource untuk Master Data Kelas
-Route::resource('kelas', KelasController::class);
+Route::resource('kelas', KelasController::class)->parameters([
+    'kelas' => 'kelas',
+]);
 
 // Route Resource untuk Master Data Siswa
 Route::resource('siswa', SiswaController::class);

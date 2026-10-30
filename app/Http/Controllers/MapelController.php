@@ -21,7 +21,8 @@ class MapelController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'kode_mapel' => 'required|unique:mapels,kode_mapel|max:20',
+            // Diubah dari 'unique:mapels' menjadi 'unique:mapel'
+            'kode_mapel' => 'required|unique:mapel,kode_mapel|max:20',
             'nama_mapel' => 'required|string|max:255',
             'kkm'        => 'required|numeric|min:0|max:100',
         ]);
@@ -38,7 +39,8 @@ class MapelController extends Controller
     public function update(Request $request, Mapel $mapel)
     {
         $validatedData = $request->validate([
-            'kode_mapel' => 'required|max:20|unique:mapels,kode_mapel,' . $mapel->id,
+            // Diubah dari 'unique:mapels' menjadi 'unique:mapel'
+            'kode_mapel' => 'required|max:20|unique:mapel,kode_mapel,' . $mapel->id,
             'nama_mapel' => 'required|string|max:255',
             'kkm'        => 'required|numeric|min:0|max:100',
         ]);

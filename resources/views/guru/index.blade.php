@@ -43,7 +43,7 @@
                                                 {{ method_exists($guru, 'firstItem') ? $index + $guru->firstItem() : $index + 1 }}
                                             </td>
                                             <td>{{ $guru->nip }}</td>
-                                            <td>{{ $guru->nama_lengkap }}</td>
+                                            <td>{{ $guru->nama }}</td>
                                             <td class="text-center">
                                                 <span class="badge {{ $guru->jenis_kelamin == 'L' ? 'bg-info text-dark' : 'bg-warning text-dark' }}">
                                                     {{ $guru->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}

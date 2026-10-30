@@ -31,7 +31,7 @@
                                 <label for="siswa_id" class="form-label">Pilih Siswa</label>
                                 <select class="form-select @error('siswa_id') is-invalid @enderror" id="siswa_id" name="siswa_id" required>
                                     <option value="" disabled>-- Pilih Siswa --</option>
-                                    @foreach ($siswas as $siswa)
+                                    @foreach ($siswa as $siswa)
                                         <option value="{{ $siswa->id }}" {{ old('siswa_id', $nilai->siswa_id) == $siswa->id ? 'selected' : '' }}>
                                             {{ $siswa->nama_lengkap }} ({{ $siswa->nis ?? 'NIS Tidak Ada' }})
                                         </option>
@@ -47,7 +47,7 @@
                                 <label for="mapel_id" class="form-label">Pilih Mata Pelajaran</label>
                                 <select class="form-select @error('mapel_id') is-invalid @enderror" id="mapel_id" name="mapel_id" required>
                                     <option value="" disabled>-- Pilih Mata Pelajaran --</option>
-                                    @foreach ($mapels as $mapel)
+                                    @foreach ($mapel as $mapel)
                                         <option value="{{ $mapel->id }}" {{ old('mapel_id', $nilai->mapel_id) == $mapel->id ? 'selected' : '' }}>
                                             {{ $mapel->nama_mapel }}
                                         </option>

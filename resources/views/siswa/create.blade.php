@@ -33,9 +33,9 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" id="nama_lengkap" name="nama_lengkap" value="{{ old('nama_lengkap') }}" placeholder="Masukkan nama lengkap siswa" required>
-                                @error('nama_lengkap')
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Masukkan nama lengkap siswa" required>
+                                @error('nama')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -43,10 +43,10 @@
                             <div class="mb-3">
                                 <label for="kelas_id" class="form-label">Kelas</label>
                                 <select class="form-select @error('kelas_id') is-invalid @enderror" id="kelas_id" name="kelas_id" required>
-                                    <option value="" disabled selected>-- Pilih Kelas --</option>
-                                    @foreach ($kelas as $kelas)
-                                        <option value="{{ $kelas->id }}" {{ old('kelas_id') == $kelas->id ? 'selected' : '' }}>
-                                            {{ $kelas->nama_kelas }}
+                                    <option value="" disabled {{ old('kelas_id') ? '' : 'selected' }}>-- Pilih Kelas --</option>
+                                    @foreach ($kelas as $k)
+                                        <option value="{{ $k->id }}" {{ old('kelas_id') == $k->id ? 'selected' : '' }}>
+                                            {{ $k->nama_kelas }}
                                         </option>
                                     @endforeach
                                 </select>

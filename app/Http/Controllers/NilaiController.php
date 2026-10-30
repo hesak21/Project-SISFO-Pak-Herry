@@ -25,7 +25,7 @@ class NilaiController extends Controller
     {
         $validatedData =$request->validate([
             'siswa_id'    => 'required|exists:siswa,id',
-            'mapel_id'    => 'required|exists:mapels,id',
+            'mapel_id'    => 'required|exists:mapel,id',
             'nilai_tugas' => 'required|numeric|min:0|max:100',
             'nilai_uts'   => 'required|numeric|min:0|max:100',
             'nilai_uas'   => 'required|numeric|min:0|max:100',
@@ -44,7 +44,9 @@ class NilaiController extends Controller
 
     public function edit(Nilai $nilai)
     {
-        $siswas = Siswa::all();$mapels = Mapel::all();
+        $siswa = Siswa::all();
+        $mapel = Mapel::all();
+    
         return view('nilai.edit', compact('nilai', 'siswa', 'mapel'));
     }
 

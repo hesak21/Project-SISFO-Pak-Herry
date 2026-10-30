@@ -14,13 +14,6 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        {{-- Tampilkan Pesan Sukses (Flash Message) --}}
-                        @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
 
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped align-middle">
@@ -39,7 +32,7 @@
                                     @forelse ($kelas as $index => $kelas)
                                         <tr>
                                             <td class="text-center">
-                                                {{ method_exists($kelases, 'firstItem') ? $index + $kelases->firstItem() : $index + 1 }}
+                                                {{ method_exists($kelas, 'firstItem') ? $index + $kelas->firstItem() : $index + 1 }}
                                             </td>
                                             <td>{{ $kelas->nama_kelas }}</td>
                                             <td class="text-center">{{ $kelas->tingkat }}</td>

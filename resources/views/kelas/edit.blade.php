@@ -22,8 +22,9 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('kelas.store') }}" method="POST">
+                        <form action="{{ route('kelas.update', $kelas->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
 
                             {{-- Nama Kelas --}}
                             <div class="mb-3">
@@ -44,7 +45,7 @@
                                     <option value="12" {{ old('tingkat') == '12' ? 'selected' : '' }}>XII (12)</option>
                                 </select>
                                 @error('tingkat')
-                                    <div class="invalid-feedback">{{ $message}0}</div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 

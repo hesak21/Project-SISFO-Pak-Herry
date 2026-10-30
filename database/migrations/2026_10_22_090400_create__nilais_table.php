@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('mapel_id')
                 ->constrained('mapel')
                 ->cascadeOnUpdate()
-                ->restrictOnDelete();
+                ->cascadeOnDelete(); // Diubah dari restrictOnDelete() menjadi cascadeOnDelete()
 
             $table->decimal('nilai_tugas', 5, 2)->default(0);
             $table->decimal('nilai_uts', 5, 2)->default(0);

@@ -49,9 +49,9 @@ class KelasController extends Controller
         return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil diperbarui.');
     }
 
-    public function destroy(Kelas $kelas)
+   public function destroy(Kelas $kelas)
     {
         $kelas->delete();
-        return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil diapus.');
+        return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil dihapus.');
     }
 }

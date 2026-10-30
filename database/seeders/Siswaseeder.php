@@ -2,30 +2,33 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use Illuminate\support\facades\DB;
+use App\Models\Siswa;
+use Illuminate\Database\Seeder; // di import model siswa supaya bisa dipakai
 
-class Siswaseeder extends Seeder
+class SiswaSeeder extends Seeder
 {
-    
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-         \DB::table('siswa')->insert([
-        [
-            'nama' => 'Andi',
-            'kelas' => 'XI RPL',
-            'email' => 'andi@example.com',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ],
-        [
-            'nama' => 'Siti',
-            'kelas' => 'XI RPL',
-            'email' => 'siti@example.com',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ],
-    ]);
+        // data dummy siswa
+        $siswa = [
+            [
+                'nisn' => '1001',
+                'nama' => 'budi santoso',
+                'jurusan' => 'XI RPL 1',
+            ],
+            [
+                'nisn' => '1002',
+                'nama' => 'budi santoso',
+                'jurusan' => 'XI RPL 1',
+            ],
+        ]; // menampung data dalam bentuk array
+
+        // memasukkan data ke dalam database
+        foreach ($siswa as $s) {
+            Siswa::create($s);
+        }
     }
 }

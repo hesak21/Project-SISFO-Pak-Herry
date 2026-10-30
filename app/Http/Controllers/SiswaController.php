@@ -22,7 +22,7 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+       $validatedData = $request->validate([
             'nis'           => 'required|unique:siswas,nis|max:20',
             'nama'          => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
@@ -50,7 +50,7 @@ class SiswaController extends Controller
     public function update(Request $request, Siswa $siswa)
     {
         $validatedData = $request->validate([
-            'nis'           => 'required|max:20|unique:siswa,nis,' . $siswa->id,
+            'nis'           => 'required|max:20|unique:siswas,nis,' . $siswa->id,
             'nama'          => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
             'alamat'        => 'required|string',
